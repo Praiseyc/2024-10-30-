@@ -12,8 +12,8 @@ categorical_columns = ['구분', '주심', '요일', '날씨', '경기장', 'pre
 label_encoders = {col: LabelEncoder() for col in categorical_columns}
 scaler = StandardScaler()
 
-st.title("관중 예측 애플리케이션")
-st.write("동일한 형식의 CSV 파일을 업로드하여 경기 관중 수를 예측합니다.")
+st.title("스틸러스 관중 예측 애플리케이션")
+st.write("정해진 형식의 CSV 파일을 업로드하여 경기 관중 수를 예측합니다.")
 
 # CSV 파일 업로드
 uploaded_file = st.file_uploader("CSV 파일을 업로드하세요", type="csv")
@@ -51,4 +51,4 @@ if uploaded_file:
     # 예측 결과 표시
     input_data['예측 관중'] = predictions
     st.write("예측 결과:")
-    st.write(input_data[['경기장', '예측 관중']])  # 원하는 컬럼과 함께 표시
+    st.write(input_data[['예측 관중']])  # 원하는 컬럼과 함께 표시
